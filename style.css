@@ -1,0 +1,19 @@
+body, p, h1, h2, h3, h4, h5, h6{
+
+	margin:0px;
+}
+
+body{
+	background-color: lightgrey
+}
+
+p, h1, h2, h3, h4, h5, h6{
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+	cursor : default;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
