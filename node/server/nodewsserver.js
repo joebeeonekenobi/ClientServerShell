@@ -1,39 +1,26 @@
 console.log("nodewsserver.js loaded")
-WebSocket = require('ws');
-WebSocketServer = WebSocket.Server;
+var WebSocketServer = require('ws').Server;
 
-WebSocketServerInstance = function(){
+launchServer = function(port){
 
-	this.launch = function(port){
+	var wss = new WebSocketServer({port: port,});
 
-		this.wss = new WebSocketServer({
-				port: port,
-			}
-		);
+	wss.on('connection', function(ws){
 
-		//console.log("Web Socket Server launched on port: " + port)
-/*
-		//Somehow this isnt overwritten by another declaration, it is called, as well as the "overwriting" event.... :(
-		this.wss.on('connection', function(ws){
+		//Log the connection
+		console.log("Connection from: "+ ws._socket.server._connectionKey)
 
-			console.log("Connection Open: " + ws._socket.remoteAddress+":"+ws._socket.remotePort)
+		ws.on('message', function(message){
+		
+	        console.log('received: ', message);
+	    });
 
-			ws.send('Hello Client!');
-			
-		    ws.on('message', function(message){
-			
-				console.log("Received: " + message);
-		    });
+		ws.on('close', function(){
 
-			ws.on('close', function(){
-
-				console.log("Connection Closed: " + this._socket.remoteAddress+":"+this._socket.remotePort)
-			});
-				
+			console.log('disconnected: '+ws._socket.server._connectionKey);
 		});
-*/
-	}
 
+	})
 
-	return this;
+	return wss;
 }

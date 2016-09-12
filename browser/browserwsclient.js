@@ -17,7 +17,7 @@ openCommunications = function(serverAddress){
 
 	console.log("Attempting to establish connection to: "+serverAddress)
 
-	var ws = new WebSocket("ws://"+serverAddress);
+	var ws = window.ws = new WebSocket("ws://"+serverAddress);
 
 	ws.onerror = function(error){
 
