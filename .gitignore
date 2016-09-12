@@ -1,4 +1,4 @@
-./node/server/node_modules/*
+node/server/node_modules/
 
 # Windows image file caches
 Thumbs.db
