@@ -10,4 +10,5 @@ main = function(){
 
 	//testConnection();
 	//promiseTest();
+	agentTest();
 }
