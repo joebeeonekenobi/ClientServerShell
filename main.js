@@ -9,4 +9,6 @@ main = function(){
 	console.log("Page Loaded.")
 
 	//testConnection();
+
+	asyncTest();
 }
