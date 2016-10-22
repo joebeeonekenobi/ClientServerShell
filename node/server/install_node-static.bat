@@ -1,0 +1,1 @@
+call npm install --save node-static
